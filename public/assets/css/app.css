@@ -1,0 +1,271 @@
+body.app {
+    padding: 0;
+    margin: 0;
+    background-color: var(--secondary);
+    color: var(--light);
+    display: grid;
+    grid-template-columns: 25vw 1fr;
+    grid-template-rows: 4px 1fr 24px;
+    grid-template-areas: "menu header"
+                         "menu content"
+                         "menu footer";
+    height: 100vh;
+    margin: 0;
+}
+
+
+header.header {
+    grid-area: header;
+    background-color: var(--secondary);
+}
+
+header.header .logo span {
+    display: none;
+}
+
+aside.menu {
+    grid-area: menu;
+    background-color: var(--dark);
+}
+
+main.content {
+    background-color: var(--secondary);
+    grid-area: content;
+}
+
+footer.footer {
+    background-color: var(--primary);
+    grid-area: footer;
+}
+
+
+
+
+header.header {
+    z-index: 3;
+    background-color: var(--secondary   ) !important;
+    color: var(--light);
+    padding: .1rem .8rem;
+    display: flex;
+}
+
+header.header .logo {
+    z-index: 3;
+    background-color: transparent;
+    display: flex;
+}
+
+.title {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title .titles {
+    margin-left: 1rem;
+}
+
+.title h1 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.primary { color: var(--primary); }
+.danger { color: tomato; }
+.success { color: springgreen; }
+
+.title h2 {
+    margin-top: 0;
+    color: var(--light-mute);
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.title i {
+    font-size: 4rem;
+}
+
+.big-space {
+    margin-top: 8rem;
+}
+
+.confirmation {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation a  {
+    display: block;
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    margin: .5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--light-mute);
+    background-color: var(--dark);
+}
+
+.confirmation a:hover {
+    color: var(--light);
+
+}
+
+.confirmation .danger {
+    color: var(--light);
+    background-color: tomato;
+}
+
+.confirmation a i.hover-icon {
+    display: none;
+}
+
+.confirmation a.danger:hover i.hover-icon {
+    display: initial;
+}
+
+.confirmation a.danger:hover i.default-icon {
+    display: none;
+}
+
+
+header.header i {
+    font-size: 3rem;
+}
+
+footer {
+    padding: 0 1rem;
+    text-align: right;
+}
+
+footer a {
+    font-weight: bold;
+    color: var(--light);
+}
+
+footer a:hover {
+    color: var(--secondary);
+}
+
+.button-menu {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    body.app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 4px 1fr 24px;
+        grid-template-areas: "header"
+                             "content"
+                             "footer";
+    }
+
+    .button-menu {
+        width: 100%;
+        position: absolute;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        background-color: transparent;
+        padding: .6rem ;
+    }
+    
+    .button-menu button {
+        color: var(--light);
+        border: none;
+        background-color: transparent;
+    }
+
+    .button-menu button i {
+        color: var(--light);
+        font-size: 1.8rem;
+    }
+
+    body.app aside.menu {
+        display: none;
+    }
+
+    body.app.on-menu {
+        overflow: hidden;
+        width: 100vw;
+        grid-template-columns: 1fr 1fr 1fr !;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "menu"
+                             "menu"
+                             "menu";
+
+    }
+
+    body.app.on-menu  aside.menu {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    body.app.on-menu body.app header.header,
+    body.app.on-menu body.app main.content,
+    body.app.on-menu body.app footer.footer {
+        display: none !important;
+        height: 100vh
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    .title {
+        padding-left: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .title .titles {
+        margin-left: 1rem;
+    }
+
+    .title h1 {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+
+    .title h2 {
+        margin-top: 0;
+        color: var(--light-mute);
+        font-size: 1rem;
+        font-weight: 200;
+    }
+    
+    .title i {
+        font-size: 3.5rem;
+    }
+    
+    .confirmation {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column-reverse;
+    }
+    
+    .confirmation a  {
+        display: block;
+        width: 90vw;
+        margin: 0;
+        font-size: 1rem;
+        padding: 1rem;
+        margin: .5rem;
+    }
+
+    
+    .confirmation .danger {
+        color: var(--light);
+        background-color: tomato;
+    }
+}

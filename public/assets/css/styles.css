@@ -1,0 +1,97 @@
+:root {
+    --primary: #7289DA;
+    --primary-h: #839AEB;
+    --secondary: #2c2f33;
+    --light-mute: #ccc;
+    --light: #ffffff;
+    --dark: #23272a;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body.default {
+    padding: 0;
+    margin: 0;
+    background-color: var(--dark);
+    overflow: hidden;
+    color: var(--light);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-h);
+}
+
+.align-end {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+
+.fullpage {
+    background: rgb(44,47,51);
+    background: linear-gradient(179deg, var(--dark) 0%, var(--dark) 25%, rgba(44,47,51,0) 25%); 
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.wave {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 10%;
+}
+
+img.background-image {
+    z-index: 0;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: -10%;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex-basis: 45%;
+    margin: 0 2.5%;
+}
+
+.col input {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .row {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .row-reverse {
+        flex-direction: column-reverse !important;
+    }
+    
+    .col {
+        flex-basis: 100%;
+        margin: 0 2.5%;
+    }
+    
+    .col input {
+        width: 100%;
+    }
+}
