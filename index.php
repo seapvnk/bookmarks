@@ -29,11 +29,8 @@ $routes->bindall([
     'confirm_delete',
 ]);
 
+
 $routes->protect(!Session::user(), [
-    '',
-    'app',
-    'bookmarks',
-    'new_bookmark',
     'logout',
     'delete',
     'settings',
@@ -41,6 +38,15 @@ $routes->protect(!Session::user(), [
     'confirm_leave'
 ], function() {
     view('denied');
+});
+
+$routes->protect(!Session::user(), [
+    '',
+    'app',
+    'new_bookmark',
+    'bookmarks'
+], function() {
+    Utility::sendTo(SERVER_ROOT . '/login');
 });
 
 $routes->dispatch();
