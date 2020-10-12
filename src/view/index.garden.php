@@ -60,15 +60,15 @@
         {@ endif; }}
     </div>
 
-{@ elseif (!$bookmarks): }}
-    <h1 class="no-bookmark">Inexistent page</h1>
-    <div class="no-bookmark-button-container">
-        <a href="{{ SERVER_ROOT }}/bookmarks">return to first page</a>
-    </div>
-{@ else: }}
+{@ elseif (!$bookmarks && $noBookmarks): }}
     <h1 class="no-bookmark">you don't have any bookmark</h1>
     <div class="no-bookmark-button-container">
         <a href="{{ SERVER_ROOT }}/new_bookmark">add bookmark</a>
+    </div>
+{@ else: }}
+    <h1 class="no-bookmark">Inexistent page</h1>
+    <div class="no-bookmark-button-container">
+        <a href="{{ SERVER_ROOT }}/bookmarks">return to first page</a>
     </div>
 {@ endif; }}
 
