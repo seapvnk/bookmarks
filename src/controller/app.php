@@ -12,6 +12,7 @@ function app($action, $params)
     $page = $action?? 1;
 
     $bookmarks = Bookmark::page($page, ITEMS_PER_PAGE, [ 'user_id' => $user->id ]);
+    $noBookmarks = Bookmark::count(['user_id' => $user->id]) == 0;
 
     $notification = Session::notification();
 
@@ -24,6 +25,7 @@ function app($action, $params)
         'page' => $page,
         'pages' => $pages,
         'notification' => $notification,
+        'noBookmarks' => $noBookmarks,
     ]);
 
     Session::u_notification();
