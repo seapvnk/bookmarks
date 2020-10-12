@@ -12,6 +12,16 @@ header.login-header {
     font-size: 3rem;
 }
 
+.app-form {
+    z-index: 2;
+    height: fit-content !important;
+    width: 40vw;
+    margin: 0rem auto !important  ;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    padding-bottom: 0 !important;
+}
+
 .login-form {
     z-index: 2;
     width: 40vw;
@@ -95,6 +105,7 @@ header.login-header {
     text-transform: lowercase;
 }
 
+
 .create-avatar {
     width: 100%;
     display: flex;
@@ -118,6 +129,7 @@ header.login-header {
     border: 1px solid var(--dark);
     transition: .3s;
 }
+
 
 .create-avatar img:hover {
     filter: opacity(.5);
@@ -195,4 +207,9 @@ header.login-header {
         border-radius: 5px;
         flex-direction: column-reverse;
     }
+
+    .app-form {
+        height: 75vh !important;
+    }
+
 }

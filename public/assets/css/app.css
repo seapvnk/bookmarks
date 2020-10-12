@@ -38,9 +38,6 @@ footer.footer {
     grid-area: footer;
 }
 
-
-
-
 header.header {
     z-index: 3;
     background-color: var(--secondary   ) !important;
@@ -75,6 +72,7 @@ header.header .logo {
 .primary { color: var(--primary); }
 .danger { color: tomato; }
 .success { color: springgreen; }
+
 
 .title h2 {
     margin-top: 0;
@@ -153,6 +151,117 @@ footer a:hover {
 
 .button-menu {
     display: none;
+}
+
+main.content .no-bookmark {
+    margin: auto;
+    font-size: 3rem;
+    margin-top: 4rem;
+    width: 70%;
+    text-align: center; 
+    color: rgba(0,0,0, .3);
+}
+
+main.content .no-bookmark-button-container {
+    margin: auto;
+    text-align: center; 
+    padding-top: 3rem;
+}
+
+main.content .no-bookmark-button-container a {
+    color: var(--light);
+    background-color: var(--primary);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.bookmarks {
+    margin: auto;
+    width: 70%;
+    padding: 1rem;
+}
+
+.bookmark {
+    margin: 1rem 0;
+}
+
+.bookmark .content {
+    display: flex;
+    margin: auto;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    color: var(--light);
+}
+
+.bookmark i, .bookmark .info span { display: block; }
+
+.bookmark .info {
+    flex: 1;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+
+.bookmark span.tag {
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.bookmark i {
+    font-size: 2rem;
+    border-right: 1px solid var(--primary);
+    padding: 1rem;
+}
+
+.bookmark span {
+    padding: 1rem;
+}
+
+div.bookmark > div  > a.danger > i:hover {
+    color: tomato !important;
+}
+
+.pages {
+    width: 70vw;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.pages a.link {
+    display: inline-block;
+    padding: .2rem;
+    margin: .8rem;
+    width: 2rem;
+    height: 2.5rem;
+    border-radius: 5px;
+}
+
+.pages a.controller {
+    font-size: 2rem;
+}
+
+.profile {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.profile .avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 900px) {
@@ -262,10 +371,16 @@ footer a:hover {
         padding: 1rem;
         margin: .5rem;
     }
-
     
     .confirmation .danger {
         color: var(--light);
         background-color: tomato;
     }
+
+    .bookmarks {
+        margin: auto;
+        width: 100%;
+        padding: 1rem;
+    }
+    
 }
