@@ -382,5 +382,13 @@ div.bookmark > div  > a.danger > i:hover {
         width: 100%;
         padding: 1rem;
     }
+
+    .profile {
+        flex-flow: column;
+        margin-bottom: 0;
+    }
     
+    .no-bookmark {
+        font-size: 1.5rem !important;
+    }
 }
