@@ -6,7 +6,7 @@ function login($action, $params)
     Loader::include('Session');
     Loader::include('Login', 'model');
 
-    if (Session::user()) Utility::redirect('/');
+    if (Session::user()) Utility::sendTo(SERVER_ROOT);
 
     $errors = [];
     if ($_POST) {

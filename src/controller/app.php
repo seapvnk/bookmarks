@@ -2,16 +2,29 @@
 
 function app($action, $params)
 {
+    define('ITEMS_PER_PAGE', 4);
+
     Loader::include('Utility');
+    Loader::include('Bookmark', 'model');
     
-    if (!Session::user()) {
-        Utility::redirect('login');
-    }
-    
+    $user = Session::user();
+    $pages = ceil(Bookmark::count(['user_id' => $user->id]) / ITEMS_PER_PAGE);
+    $page = $action?? 1;
+
+    $bookmarks = Bookmark::page($page, ITEMS_PER_PAGE, [ 'user_id' => $user->id ]);
+
+    $notification = Session::notification();
+
     view('index', [
         'user' => Session::user(),
         'icon' => 'library',
         'title' => 'bookmarks',
         'subtitle' => 'listing all your bookmarks',
+        'bookmarks' => $bookmarks,
+        'page' => $page,
+        'pages' => $pages,
+        'notification' => $notification,
     ]);
+
+    Session::u_notification();
 }
