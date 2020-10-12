@@ -68,16 +68,14 @@ class Model
 
     public static function page($page, $numberPerPage, $filters = [], $columns = '*')
     {
-        $pages = ceil(self::count() / $numberPerPage);
+        $pages = ceil(self::count($filters) / $numberPerPage);
+        if ($pages < $page) return false;
         $offset = ($page - 1) * $numberPerPage;
-
-
-
         $sql = "SELECT $columns FROM "
                 . static::$table . " "
                 . static::filters($filters)
                 . " LIMIT $offset, $numberPerPage";
-
+                
         $result = Database::query($sql);
         $objects = [];
         if ($result) {
@@ -149,7 +147,7 @@ class Model
 
         $sql[strlen($sql) - 1] = ' ';
         $sql .= "WHERE id = {$this->id}";
-
+        
         Database::execute($sql);
     }
 
