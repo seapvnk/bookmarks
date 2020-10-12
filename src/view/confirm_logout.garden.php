@@ -5,12 +5,12 @@
 {% title %}
 
 <div class="confirmation">
-    <a href="logout" class="danger">
+    <a href="{{ SERVER_ROOT }}/logout" class="danger">
         <i class="icofont-logout default-icon"></i>
         <i class="icofont-warning-alt hover-icon"></i> 
         Yes, i want to leave! 
     </a>
-    <a href="app" role="button">:) No, i want to stay.</a>
+    <a href="{{ SERVER_ROOT }}/app" role="button">:) No, i want to stay.</a>
 </div>
 
 {% app_footer %}

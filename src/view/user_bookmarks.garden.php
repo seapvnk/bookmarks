@@ -1,7 +1,3 @@
-{% app_header %}
-
-{% title %}
-
 {@ if ($bookmarks && count($bookmarks) > 0): }}
 
     <div class="bookmarks">
@@ -24,16 +20,13 @@
                         
                         <span class="tag">  {{ $bookmark->tag }} </span>
                     </div>
-                    <a class="danger" href="{{ SERVER_ROOT }}/confirm_delete/{{ $bookmark->id }}">
-                        <i class="icofont-close-line-circled"></i>
-                    </a>
                 </div>
             </div>
         {@ endforeach; }}
     </div>
     <div class="pages">
         {@ if ($page != 1): }}
-            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page - 1 }}"><i class="icofont-arrow-left"></i></a>
+            <a class="controller" href="{{ SERVER_ROOT }}/users/{{ $userSearch->id }}/{{ $page - 1 }}"><i class="icofont-arrow-left"></i></a>
         {@ endif; }}
 
         {@ 
@@ -47,7 +40,7 @@
 
             <a 
                 class="link {{ $pagination == $page? 'success' : '' }}" 
-                href="{{ SERVER_ROOT }}/bookmarks/{{ $pagination }}"
+                href="{{ SERVER_ROOT }}/users/{{ $userSearch->id }}/{{ $pagination }}"
             >
                 {{ $pagination }}
             </a>
@@ -56,20 +49,12 @@
 
 
         {@ if ($page < $pages): }}
-            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page + 1 }}"><i class="icofont-arrow-right"></i></a>
+            <a class="controller" href="{{ SERVER_ROOT }}/users/{{ $userSearch->id }}/{{ $page + 1 }}"><i class="icofont-arrow-right"></i></a>
         {@ endif; }}
     </div>
 
 {@ elseif (!$bookmarks): }}
-    <h1 class="no-bookmark">Inexistent page</h1>
-    <div class="no-bookmark-button-container">
-        <a href="{{ SERVER_ROOT }}/bookmarks">return to first page</a>
-    </div>
+    <h1 class="no-bookmark">{{ $userSearch->name }} have no bookmarks</h1>
 {@ else: }}
-    <h1 class="no-bookmark">you don't have any bookmark</h1>
-    <div class="no-bookmark-button-container">
-        <a href="{{ SERVER_ROOT }}/new_bookmark">add bookmark</a>
-    </div>
+    <h1 class="no-bookmark">{{ $userSearch->name }} have no bookmarks</h1>
 {@ endif; }}
-
-{% app_footer %}

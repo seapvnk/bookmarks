@@ -22,7 +22,7 @@
         <h1>Register</h1>
         <h2>Create a free account to save your bookmarks</h2>
 
-        <form action="#" method="POST" enctype= multipart/form-data>
+        <form action="#" method="POST" enctype="multipart/form-data">
             <div class="row  row-reverse">
 
                 <div>
