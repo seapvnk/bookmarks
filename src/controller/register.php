@@ -38,7 +38,7 @@ function register($action, $params)
     
                 if (!$hasError) {
                     Session::notifications('account created!');
-                    Utility::redirect('login'); 
+                    Utility::sendTo(SERVER_ROOT . '/login');
                 }
                 
             }
