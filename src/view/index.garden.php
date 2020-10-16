@@ -1,6 +1,6 @@
-{% app_header %}
+{% components/header %}
 
-{% title %}
+{% components/title %}
 
 {@ if ($bookmarks && count($bookmarks) > 0): }}
 
@@ -32,17 +32,24 @@
         {@ endforeach; }}
     </div>
     <div class="pages">
+
         {@ if ($page != 1): }}
-            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page - 1 }}"><i class="icofont-arrow-left"></i></a>
+            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page - 1 }}">
+                <i class="icofont-arrow-left"></i>
+            </a>
         {@ endif; }}
 
-        {@ 
+
+        {@  # Display pages
+
             $limit = 4;
             $start = ($page - 4) < 1? 1 : $page - 4;
             $end = ($page + 4) > $pages? $pages : $page + 4;
             for ($pagination = $pages - $limit; $pagination <= $pages + $limit ; $pagination++):
+            
             if ($pagination <= 0) continue;
             if ($pagination > $pages) break;
+
         }}
 
             <a 
@@ -56,8 +63,11 @@
 
 
         {@ if ($page < $pages): }}
-            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page + 1 }}"><i class="icofont-arrow-right"></i></a>
+            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page + 1 }}">
+                <i class="icofont-arrow-right"></i>
+            </a>
         {@ endif; }}
+
     </div>
 
 {@ elseif (!$bookmarks && $noBookmarks): }}
@@ -72,4 +82,4 @@
     </div>
 {@ endif; }}
 
-{% app_footer %}
+{% components/footer %}

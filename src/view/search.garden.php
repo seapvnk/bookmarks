@@ -1,6 +1,6 @@
-{% app_header %}
+{% components/header %}
 
-{% title %}
+{% components/title %}
 
 {@ if (!$userFound): }}
     <div class="login-form app-form">
@@ -21,7 +21,7 @@
         <h2>{{ $userSearch->name }}<span class="primary"><i class="icofont-at"></i>{{ str_pad($userSearch->id, 6, '0', STR_PAD_LEFT) }}</h2>
     </div>
 
-    {% user_bookmarks %}
+    {% components/user_bookmarks %}
 
 {@ endif; }}
-{% app_footer %}
+{% components/footer %}

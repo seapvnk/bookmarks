@@ -1,6 +1,6 @@
-{% app_header %}
+{% components/header %}
 
-{% title %}
+{% components/title %}
 
 <div class="app-form login-form">
     {@ if (isset($notification)): }}
@@ -49,4 +49,4 @@
     
 </div>
 
-{% app_footer %}
+{% components/footer %}

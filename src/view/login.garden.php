@@ -1,4 +1,4 @@
-{% header %}
+{% components/header %}
 
 <header class="login-header">
     <i class="icofont-book-mark"></i>
@@ -50,4 +50,4 @@
 
 
 
-{% footer %}
+{% components/footer %}

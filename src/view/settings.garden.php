@@ -1,6 +1,6 @@
-{% app_header %}
+{% components/header %}
 
-{% title %}
+{% components/title %}
 
 <div class="login-form app-form">
     <form action="#" method="POST" enctype="multipart/form-data">
@@ -22,4 +22,4 @@
 </div>
 <script src="public/assets/js/imagePreview.js"></script>
 
-{% app_footer %}
+{% components/footer %}

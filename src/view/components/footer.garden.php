@@ -1,9 +1,10 @@
 </main>
 
 <footer class="footer">
-    Developed by <a target="_blank" href="https://github.com/seapvnk">Pedro</a>
+    Developed by <a target="_blank" href="https://github.com/seapvnk">pedro/seapvnk</a>
 </footer>
 
 <script src="{{SERVER_ROOT}}/public/assets/js/menuToggle.js"></script>
 
-{% footer %}
+</body>
+</html>

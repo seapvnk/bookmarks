@@ -1,10 +1,12 @@
-{% header %}
+<?php view(' meta ')?>
 
 
 <div class="button-menu">
+
     <button class="toggle-menu">
         <i class="icofont-navigation-menu"></i>
     </button>
+    
 </div>
 
 <header class="header">
@@ -16,6 +18,6 @@
     
 </header>
 
-{% app_menu %}
+<?php view(' menu ')?>
 
 <main class="content">
