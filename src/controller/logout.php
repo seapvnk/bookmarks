@@ -9,6 +9,6 @@ function logout($action, $params)
         Session::u_user();
     }
 
-    Utility::redirect('login');
+    Utility::sendTo(SERVER_ROOT . '/login');
     exit;
 }
