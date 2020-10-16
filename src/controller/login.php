@@ -15,7 +15,7 @@ function login($action, $params)
     
         if (!count($errors)) {
             $login->performLogin();
-            Utility::redirect('app');
+            Utility::sendTo(SERVER_ROOT . '/app');
             exit;
         }
     }
