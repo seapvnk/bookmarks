@@ -1,4 +1,4 @@
-{% components/header %}
+{% components/meta %}
 
 <header class="login-header">
     <i class="icofont-book-mark"></i>
