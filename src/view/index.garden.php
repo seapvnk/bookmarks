@@ -1,11 +1,9 @@
 {% components/header %}
-
 {% components/title %}
 
 {@ if ($bookmarks && count($bookmarks) > 0): }}
 
     <div class="bookmarks">
-
         {@ if (isset($notification)): }}
             <div class="notification {{ $notification['type'] }}">
                 <i class="icofont-exclamation-circled"></i>
@@ -31,55 +29,24 @@
             </div>
         {@ endforeach; }}
     </div>
-    <div class="pages">
 
-        {@ if ($page != 1): }}
-            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page - 1 }}">
-                <i class="icofont-arrow-left"></i>
-            </a>
-        {@ endif; }}
-
-
-        {@  # Display pages
-
-            $limit = 4;
-            $start = ($page - 4) < 1? 1 : $page - 4;
-            $end = ($page + 4) > $pages? $pages : $page + 4;
-            for ($pagination = $pages - $limit; $pagination <= $pages + $limit ; $pagination++):
-            
-            if ($pagination <= 0) continue;
-            if ($pagination > $pages) break;
-
-        }}
-
-            <a 
-                class="link {{ $pagination == $page? 'success' : '' }}" 
-                href="{{ SERVER_ROOT }}/bookmarks/{{ $pagination }}"
-            >
-                {{ $pagination }}
-            </a>
-
-        {@ endfor; }}
-
-
-        {@ if ($page < $pages): }}
-            <a class="controller" href="{{ SERVER_ROOT }}/bookmarks/{{ $page + 1 }}">
-                <i class="icofont-arrow-right"></i>
-            </a>
-        {@ endif; }}
-
-    </div>
+    {% components/pagination %}
 
 {@ elseif (!$bookmarks && $noBookmarks): }}
+
+    {@ # If no bookmarks to display }}
     <h1 class="no-bookmark">you don't have any bookmark</h1>
     <div class="no-bookmark-button-container">
         <a href="{{ SERVER_ROOT }}/new_bookmark">add bookmark</a>
     </div>
+
 {@ else: }}
+
+    {@ # If trying to access by URL an inexistent page  }}
     <h1 class="no-bookmark">Inexistent page</h1>
     <div class="no-bookmark-button-container">
         <a href="{{ SERVER_ROOT }}/bookmarks">return to first page</a>
     </div>
-{@ endif; }}
 
+{@ endif; }}
 {% components/footer %}

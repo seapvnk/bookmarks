@@ -1,5 +1,4 @@
 {% components/header %}
-
 {% components/title %}
 
 <div class="login-form app-form">
