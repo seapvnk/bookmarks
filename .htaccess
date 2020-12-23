@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /bookmarks/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /bookmarks/ [NC]
+RewriteRule . index.php [NC]
